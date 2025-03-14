@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
+  <rootFeature minCardinality="1" maxCardinality="1" name="Module">
+    <groups maxCardinality="1">
+      <features minCardinality="1" maxCardinality="1" name="Radar">
+        <features name="SpinningRadar"/>
+        <features name="MouseRadar"/>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="Targeting">
+        <features name="HeadOnTargeting"/>
+        <features name="LinearTargeting"/>
+        <features name="MouseTargeting"/>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="Movement">
+        <features name="NoMovement"/>
+        <features name="KeyboardMovement"/>
+        <features name="AutoMovement">
+          <features name="Cornering"/>
+          <features name="Line"/>
+        </features>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="SelectEnemy">
+        <features name="WeakestSelectEnemy"/>
+        <features name="StrongestSelectEnemy"/>
+        <features name="ClosestSelectEnemy"/>
+        <features name="NewSelectEnemy"/> <!-- Tambahan fitur baru -->
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="Gun">
+        <features name="MaximumPowerGun"/>
+        <features name="NoFireGun"/>
+        <features name="MouseClickGun"/>
+      </features>
+    </groups>
+  </rootFeature>
+</feature:DEFeatureModel>

@@ -1,0 +1,18 @@
+delta NewSelectEnemy {
+
+    modifies class Module {
+        public void selectEnemy() {
+            Enemy fastestEnemy = null;
+            double maxSpeed = -1;
+
+            for (Enemy e : enemies.values()) {
+                if (fastestEnemy == null || e.velocity > maxSpeed) {
+                    fastestEnemy = e;
+                    maxSpeed = e.velocity;
+                }
+            }
+            
+            enemy = fastestEnemy;
+        }
+    }
+}
