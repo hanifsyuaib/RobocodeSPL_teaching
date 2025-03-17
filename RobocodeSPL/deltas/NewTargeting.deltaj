@@ -1,0 +1,24 @@
+delta NewTargeting {
+    modifies jab.module.Targeting {
+        modifies void target() {
+            Enemy weakestEnemy = null;
+            double minEnergy = Double.MAX_VALUE;
+
+            for (Enemy e : bot.enemies.values()) {
+                if (weakestEnemy == null || e.getEnergy() < minEnergy) {
+                    weakestEnemy = e;
+                    minEnergy = e.getEnergy();
+                }
+            }
+
+            if (weakestEnemy != null) {
+                double angle = robocode.util.Utils.normalAbsoluteAngle(
+                    Math.atan2(weakestEnemy.getX() - bot.getX(), weakestEnemy.getY() - bot.getY())
+                );
+                bot.setTurnGunRightRadians(
+                    robocode.util.Utils.normalRelativeAngle(angle - bot.getGunHeadingRadians())
+                );
+            }
+        }
+    }
+}

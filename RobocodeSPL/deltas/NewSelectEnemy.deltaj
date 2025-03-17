@@ -1,14 +1,13 @@
 delta NewSelectEnemy {
-
-    modifies class Module {
-        public void selectEnemy() {
+    modifies jab.module.SelectEnemy { 
+        modifies void selectEnemy() {
             Enemy fastestEnemy = null;
             double maxSpeed = -1;
 
             for (Enemy e : enemies.values()) {
-                if (fastestEnemy == null || e.velocity > maxSpeed) {
+                if (fastestEnemy == null || e.getVelocity() > maxSpeed) {
                     fastestEnemy = e;
-                    maxSpeed = e.velocity;
+                    maxSpeed = e.getVelocity();
                 }
             }
             

@@ -13,6 +13,7 @@
           <features name="HeadOnTargeting"/>
           <features name="LinearTargeting"/>
           <features name="MouseTargeting"/>
+          <features name="NewTargeting"/> <!-- Tambahan fitur baru -->
         </groups>
       </features>
       <features name="Movement">
